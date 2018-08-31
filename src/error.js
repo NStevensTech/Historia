@@ -12,7 +12,7 @@ function print(message , code=0, err, tb=false){
         chalk.white(message),
         "\n",
         (tb)
-            ? chalk.red(err().stack)
+            ? chalk.red(err.stack)
             : '',
         "\n"
         )
