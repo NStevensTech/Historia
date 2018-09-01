@@ -37,3 +37,4 @@ Required:
 | 0.2.0 | 08-31-2018 | More styled printing presets |
 |   |   | Stylized errors |
 |   |   | Errors have optional tracebacks |
+| 0.2.1 | 08-31-2018 | Bug fix |
