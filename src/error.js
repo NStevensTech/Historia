@@ -18,6 +18,13 @@ function print(message , code=0, err, tb=false){
         )
 }
 
+function Archive(Book, message, code=0, err=null, tb=false, callback){
+
+    print("This function is not complete. Variables are passed to the call back.", "error.Archive()")
+
+    callback(Book, message, code, err, tb)
+}
+
 
 module.exports = {
     print
