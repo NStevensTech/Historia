@@ -1,6 +1,6 @@
 {
   "name": "historia-log",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A package to assist in logging.",
   "main": "index.js",
   "dependencies": {
