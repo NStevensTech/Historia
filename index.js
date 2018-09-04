@@ -62,5 +62,6 @@ module.exports = {
     log,
     error,
     info,
-    book
+    book,
+    errors
 }
