@@ -61,6 +61,6 @@ Required:
 | 0.2.1 | 08-31-2018 | Bug fix |
 | 0.2.2 | 09-01-2018 | Bug fix |
 | 0.2.3 | 09-04-2018 | Removed Unnecessary/Unused feature |
-| 0.3.0 | 09-04-2019 | Added File logging |
+| 0.3.0 | 09-04-2018 | Added File logging |
 |   |   | Merged /src/log.js in to /src/info.js |
 |   |   | Modified API
