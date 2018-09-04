@@ -1,7 +1,7 @@
 const HError                        = require('../errors');
 const chalk                         = require('chalk');
 
-function print(message , code=0, err, tb=false){
+function Print(message , code=0, err, tb=false){
     console.log(
         chalk.bgRed.black(" Error "),
         "\t\t\t\t\t\t\t", 
@@ -18,14 +18,34 @@ function print(message , code=0, err, tb=false){
         )
 }
 
-function Archive(Book, message, code=0, err=null, tb=false, callback){
+function Log(Book, message, code, err, tb, callback){
+    let today = new Date();
+    let data = today.toLocaleDateString(Book.locale);
 
-    print("This function is not complete. Variables are passed to the call back.", "error.Archive()")
+    if (Book.type === "TXT"){
+        let result = '';
+        result = result.concat("ERROR: ", code);
+        (tb)
+            ? result = result.concat(err.stack)
+            : null
+        result = result.concat("\r\n", message);
+        result = result.concat("\r\n----------------------------------------------")
+        data = data.concat("\r\n", result);
+    }
+    if (Book.type === "CSV"){
+        Book.header.forEach( prefix => {
+            data = data.concat(",ERROR");
+        });
+        data = data.concat(",[", code, "] ", message, (tb)?err.stack :"");
+    }
+    data = data.concat("\r\n")
+    Book.Write(data)
 
-    callback(Book, message, code, err, tb)
+    callback(message, code, err, tb)
 }
 
 
 module.exports = {
-    print
+    Print,
+    Log
 }

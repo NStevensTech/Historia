@@ -1,19 +1,23 @@
-const log                           = require('./src/log');
 const error                         = require('./src/error');
 const info                          = require('./src/info');
+const Errors                        = require('./errors');
 const fs                            = require('fs');
 
-class book{
-    constructor(file, type, header, locale="en-US"){
-        this.file = file
-        this.type = type
-        this.header = header
-        this.locale = locale
+class Book{
+    constructor(directory, type, header, locale="en-US"){
+        this.dir = directory + "/logs";
+        this.type = type;
+        this.file = this.dir + "/log." + this.type;
+        this.header = header;
+        this.locale = locale;
+        
+        fs.existsSync(this.dir) || fs.mkdirSync(this.dir);
+
     }
 
     Draft() {
         if (this.type === "TXT"){
-            var data = "This log was created with historia-log."
+            var data = "This log was created with historia-log.\r\n----------------------------------------------"
         }
         if (this.type === "CSV"){
             var data = "Date"
@@ -57,11 +61,9 @@ class book{
     }
 }
 
-
 module.exports = {
-    log,
     error,
     info,
-    book,
-    errors
+    Book,
+    Errors
 }
