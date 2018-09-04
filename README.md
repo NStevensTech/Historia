@@ -1,5 +1,5 @@
 [license]: https://img.shields.io/github/license/NStevensTech/historia-log.svg
-[version]:https://img.shields.io/badge/Version-0.3.0-red.svg
+[version]:https://img.shields.io/badge/Version-0.3.2-red.svg
 
 # Historia-Log ![alt test][license] ![alt text][version]
 
