@@ -38,3 +38,5 @@ Required:
 |   |   | Stylized errors |
 |   |   | Errors have optional tracebacks |
 | 0.2.1 | 08-31-2018 | Bug fix |
+| 0.2.2 | 09-01-2018 | Bug fix |
+| 0.2.3 | 09-04-2018 | Removed Unnecessary/Unused feature |

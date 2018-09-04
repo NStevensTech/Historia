@@ -5,10 +5,6 @@ colors = [chalk.green, chalk.yellow, chalk.blue, chalk.magenta]
 
 
 function print(prefixes, msg){
-    if (msg == undefined){
-        msg = prefixes.msg
-        prefixes = prefixes.prefixes
-    }
     let result = '';
     prefixes.forEach(prefix => {
         result = result + colors[prefixes.indexOf(prefix)]('[' + prefix + ']');
