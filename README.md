@@ -1,5 +1,7 @@
 [license]: https://img.shields.io/github/license/NStevensTech/historia-log.svg
 [version]:https://img.shields.io/badge/Version-0.3.2-red.svg
+[![Maintainability](https://api.codeclimate.com/v1/badges/b7d991ba95fe3a4dba45/maintainability)](https://codeclimate.com/github/nathandstevens/historia-log/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b7d991ba95fe3a4dba45/test_coverage)](https://codeclimate.com/github/nathandstevens/historia-log/test_coverage)
 
 # Historia-Log ![alt test][license] ![alt text][version]
 
