@@ -19,6 +19,4 @@ workflows:
     test:
       jobs:
         - node/test
-    codecov:
-      jobs:
         - codecov-upload
