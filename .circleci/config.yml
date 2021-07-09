@@ -1,14 +1,28 @@
-# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
-version: 2.1
-
-orbs:
-  node: circleci/node@4.1
-
-workflows:
-  sample:
-    jobs:
-      - node/test:
-          version: '15.1'
-          # This is the node version to use for the `cimg/node` tag
-          # Relevant tags can be found on the CircleCI Developer Hub
-          # https://circleci.com/developer/images/image/cimg/node
+version: 2.0
+jobs:
+  build:
+    environment:
+      CC_TEST_REPORTER_ID: YOUR_REPO_CC_TEST_REPORTER_ID
+    docker:
+      - image: "mileschou/xdebug:7.3"
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Setup dependencies
+          command: |
+            sudo composer self-update
+            composer install -n --prefer-dist
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+          # download test reporter as a static binary
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - run:
+          name: Run tests
+          command: |
+            sudo docker-php-ext-enable xdebug
+            ./cc-test-reporter before-build
+            sudo vendor/bin/phpunit --coverage-clover clover.xml
+            ./cc-test-reporter after-build --coverage-input-type clover --exit-code
