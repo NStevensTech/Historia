@@ -10,10 +10,10 @@ jobs:
       # replace with your preferred image
       - image: cimg/base:2021.04
     steps:
+      - run:
+          npm test
       - codecov/upload:
           file: /coverage
-      - store_test_results:
-          path: test-results
 
 workflows:
     test:
