@@ -17,6 +17,8 @@ workflows:
     test:
       jobs:
         - node/test
+        - store_test_results:
+          path: test-results
     codecov:
       jobs:
         - codecov-upload
