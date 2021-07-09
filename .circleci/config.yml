@@ -9,6 +9,7 @@ jobs:
       - run:
           name: Setup dependencies
           command: |
+            apt-get install composer
             composer self-update
             composer install -n --prefer-dist
       - run:
