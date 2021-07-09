@@ -8,7 +8,7 @@ jobs:
   codecov-upload:
     docker:
       # replace with your preferred image
-      - image: ubuntu/latest
+      - image: cimg/base:2021.04
     steps:
       - codecov/upload:
           file: /coverage
