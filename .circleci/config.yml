@@ -2,7 +2,7 @@ version: 2.0
 jobs:
   build:
     environment:
-      CC_TEST_REPORTER_ID: YOUR_REPO_CC_TEST_REPORTER_ID
+      CC_TEST_REPORTER_ID: REPORTER_ID
     docker:
       - image: "mileschou/xdebug:7.3"
     working_directory: ~/repo
