@@ -23,4 +23,4 @@ jobs:
             sudo docker-php-ext-enable xdebug
             ./cc-test-reporter before-build
             sudo vendor/bin/phpunit --coverage-clover clover.xml
-            ./cc-test-reporter after-build --coverage-input-type clover --exit-code
+            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
